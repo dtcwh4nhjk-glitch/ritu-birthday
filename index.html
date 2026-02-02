@@ -1,125 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Ritu ❤️</title>
+  <meta charset="UTF-8">
+  <title>For Ritu ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #1f1c2c, #928dab);
-  color: #fff;
-  text-align: center;
-}
-
-.container {
-  padding: 30px 20px;
-  max-width: 700px;
-  margin: auto;
-}
-
-h1 {
-  font-size: 2.2em;
-  margin-bottom: 10px;
-}
-
-.card {
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 20px;
-  margin: 25px 0;
-  animation: fadeIn 1.2s ease;
-}
-
-@keyframes fadeIn {
-  from {opacity:0; transform: translateY(20px);}
-  to {opacity:1; transform: translateY(0);}
-}
-
-#countdown {
-  font-size: 1.3em;
-  margin-top: 10px;
-}
-
-.photo img {
-  width: 100%;
-  border-radius: 15px;
-  margin-top: 15px;
-}
-
-.hidden {
-  display: none;
-}
-
-.final {
-  font-size: 1.15em;
-  line-height: 1.7;
-}
-</style>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #ffe6eb, #ffffff);
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #d6336c;
+    }
+    #countdown {
+      font-size: 18px;
+      margin: 20px 0;
+      font-weight: bold;
+    }
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 15px;
+      margin: 20px auto;
+      max-width: 350px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .card img, .card video {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
 
-<audio id="music" loop>
-  <source src="song.mp3" type="audio/mpeg">
-</audio>
+  <h1>For You, Ritu ❤️</h1>
+  <p>A little journey of love, one day at a time</p>
 
-<div class="container">
-
-<h1>For My Ritu ❤️</h1>
-<p>Something special unlocks a little more every day…</p>
-
-<!-- Countdown -->
-<div class="card">
-  <h2>⏳ Countdown to Your Birthday</h2>
   <div id="countdown"></div>
-</div>
 
-<!-- Daily Surprises -->
-<div id="daily"></div>
+  <div id="daily"></div>
 
-<!-- Final Surprise -->
-<div id="finalSurprise" class="card hidden">
-  <h2>🎂 Happy Birthday Ritu ❤️</h2>
-  <div class="final">
-    Ritu…  
-    <br><br>
-    From the day we first talked on 24th July, my life slowly started changing in ways I never imagined.  
-    On 26th November, when we committed, I knew this wasn’t just love — it was a future I wanted with you.
-    <br><br>
-    You are my safe place, my happiness, my strength.  
-    I don’t just love you for today… I love you for every tomorrow waiting for us.
-    <br><br>
-    I promise to stand by you in every phase of life —  
-    in happiness, in struggles, in silence, and in dreams we haven’t even dreamt yet.
-    <br><br>
-    Happy Birthday my love.  
-    This is just the beginning of *our forever*. 💍❤️  
-    <br><br>
-    — Yours, Ritik
+  <div id="finalSurprise" class="card hidden">
+    <h2>🎂 Happy Birthday Ritu ❤️</h2>
+    <p style="text-align:left; font-size:15px; line-height:1.6">
+      Happy Birthday, my love ❤️<br><br>
+
+      From the very first conversation on 24th July, something about you felt different — calm, warm, and real.
+      I never imagined that one random conversation would slowly turn into the most meaningful connection of my life.<br><br>
+
+      I still remember how we held hands for the first time, without planning, without words — just two hearts understanding each other.
+      I remember the friendship day gift you sent so early, when we barely knew each other, yet it carried so much thought.
+      I remember the day you were sick, yet you travelled all the way just to meet me… and how that day became unforgettable with our first kiss.<br><br>
+
+      These moments aren’t just memories for me — they are proof that what we have is genuine.<br><br>
+
+      With you, I’ve learned what comfort feels like.
+      With you, I’ve learned that love doesn’t have to be loud — it can be patient, soft, and deeply reassuring.
+      You make me want to be better, calmer, stronger — not just for myself, but for us.<br><br>
+
+      On your birthday, I don’t just wish you happiness for today.
+      I wish for a future where we grow together, support each other, fight for each other, and choose each other every single day.<br><br>
+
+      I promise to stand by you — in your good days and your bad ones,
+      in your silence and your laughter.
+      I promise to respect your dreams, protect your heart,
+      and love you with honesty and effort.<br><br>
+
+      You are not just my present, Ritu.<br>
+      <b>You are my future.</b><br><br>
+
+      Always yours,<br>
+      <b>Ritik ❤️</b>
+    </p>
   </div>
-</div>
 
-</div>
+  <audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
 
 <script>
-// IST Time
 function getIST() {
-  return new Date(new Date().toLocaleString("en-US", {timeZone: "Asia/Kolkata"}));
+  return new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" }));
 }
 
 const birthday = new Date("2026-02-28T00:00:00+05:30");
+const startDate = new Date("2026-02-03T00:00:00+05:30");
 
-// Countdown
 setInterval(() => {
   const now = getIST();
   const diff = birthday - now;
 
   if (diff <= 0) {
-    document.getElementById("countdown").innerHTML = "🎉 It’s Your Birthday ❤️";
+    document.getElementById("countdown").innerHTML = "🎉 It’s Your Birthday Ritu ❤️";
     document.getElementById("finalSurprise").classList.remove("hidden");
     document.getElementById("music").play();
     return;
@@ -134,23 +114,57 @@ setInterval(() => {
     `${d} Days ${h} Hours ${m} Minutes ${s} Seconds`;
 }, 1000);
 
-// Daily unlocks
-const dailyContent = [
-  { date: "2026-02-24", photo: "photo1.jpg", text: "A small reminder that someone loves you more than you know ❤️" },
-  { date: "2026-02-25", photo: "photo2.jpg", text: "Every smile of yours makes my world brighter ✨" },
-  { date: "2026-02-26", photo: "photo3.jpg", text: "I fall for you a little more every single day 💕" },
-  { date: "2026-02-27", photo: "photo4.jpg", text: "Tomorrow… something very special is waiting for you 🥹❤️" }
+const messages = [
+  "From today, I want you to feel one thing clearly — you matter to me, deeply and genuinely ❤️",
+  "I still smile when I think about how two strangers slowly became something so special ✨",
+  "Every little moment with you has a quiet magic that my heart never forgets 💕",
+  "Some memories are better felt in motion… this is one of my favourites 🥹",
+  "Holding your hand felt so natural, like my heart already knew where it belonged 🤍",
+  "Even your random moments make my world feel lighter ❤️",
+  "I love how effortlessly you became my comfort and my calm ✨",
+  "This smile… this laugh… I could watch this a thousand times 💕",
+  "You have no idea how proud I feel calling you mine 🫶",
+  "Some days are made special just because you exist in them ❤️",
+  "You feel like home — safe, warm, and always welcoming 🤍",
+  "Loving you doesn’t feel like effort… it feels natural 💘",
+  "That day you came even when you were sick… I’ll never forget it 🥹",
+  "This moment reminds me how lucky I am to have you ✨",
+  "With you, even silence feels full ❤️",
+  "I wish you could see yourself through my eyes 🫶",
+  "You didn’t just enter my life, you changed it beautifully 💕",
+  "This is the kind of memory I want forever 🤍",
+  "Every day with you feels closer to the life I want ✨",
+  "I smile more because of you ❤️",
+  "You are my favourite feeling 🫶",
+  "Thank you for choosing me 🤍",
+  "No matter where life takes us, I want your hand in mine ❤️",
+  "Just two more days… 🥹",
+  "Tomorrow, everything my heart has waited to say 🤍"
 ];
 
-const dailyDiv = document.getElementById("daily");
-const today = getIST().toISOString().split("T")[0];
+const pattern = ["photo","photo","photo","video","photo","video","photo","video"];
+const container = document.getElementById("daily");
+const today = getIST();
 
-dailyContent.forEach(item => {
-  if (today >= item.date) {
+messages.forEach((msg, i) => {
+  const unlock = new Date(startDate);
+  unlock.setDate(startDate.getDate() + i);
+
+  if (today >= unlock) {
+    const type = pattern[i % pattern.length];
+    const num = String(i+1).padStart(2,"0");
+
     const card = document.createElement("div");
-    card.className = "card photo";
-    card.innerHTML = `<p>${item.text}</p><img src="${item.photo}">`;
-    dailyDiv.appendChild(card);
+    card.className = "card";
+
+    card.innerHTML = `
+      <p>${msg}</p>
+      ${type === "photo"
+        ? `<img src="day${num}.jpg">`
+        : `<video controls playsinline><source src="day${num}.mp4" type="video/mp4"></video>`}
+    `;
+
+    container.appendChild(card);
   }
 });
 </script>
