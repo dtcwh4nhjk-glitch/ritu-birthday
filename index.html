@@ -2,128 +2,157 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Happy Birthday Ritu ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Ritu ❤️</title>
+
 <style>
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(#ffdde1, #ee9ca7);
-    text-align: center;
-    color: #333;
-    padding: 20px;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  color: #fff;
+  text-align: center;
 }
-h1 { color: #c2185b; }
-.section { margin: 40px 0; }
-.gallery img {
-    width: 150px;
-    height: 200px;
-    object-fit: cover;
-    margin: 10px;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+.container {
+  padding: 30px 20px;
+  max-width: 700px;
+  margin: auto;
 }
-#hiddenMessage {
-    display: none;
-    margin-top: 20px;
-    font-size: 20px;
-    color: #b0003a;
-    background: #fff;
-    padding: 20px;
-    border-radius: 15px;
+
+h1 {
+  font-size: 2.2em;
+  margin-bottom: 10px;
 }
-button {
-    padding: 10px 20px;
-    background: #c2185b;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
+
+.card {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 20px;
+  margin: 25px 0;
+  animation: fadeIn 1.2s ease;
 }
-button:hover { background: #a3154a; }
+
+@keyframes fadeIn {
+  from {opacity:0; transform: translateY(20px);}
+  to {opacity:1; transform: translateY(0);}
+}
+
+#countdown {
+  font-size: 1.3em;
+  margin-top: 10px;
+}
+
+.photo img {
+  width: 100%;
+  border-radius: 15px;
+  margin-top: 15px;
+}
+
+.hidden {
+  display: none;
+}
+
+.final {
+  font-size: 1.15em;
+  line-height: 1.7;
+}
 </style>
 </head>
 
 <body>
 
-<!-- Background Music -->
-<audio autoplay loop>
+<audio id="music" loop>
   <source src="song.mp3" type="audio/mpeg">
 </audio>
 
-<h1>Happy Birthday My Love, Ritu 🎂❤️</h1>
-<p>This small website is made with all my love – Ritik</p>
+<div class="container">
 
-<!-- Countdown Section -->
-<div class="section">
-<h2>⏳ Countdown to Your Birthday</h2>
-<p id="countdown"></p>
+<h1>For My Ritu ❤️</h1>
+<p>Something special unlocks a little more every day…</p>
+
+<!-- Countdown -->
+<div class="card">
+  <h2>⏳ Countdown to Your Birthday</h2>
+  <div id="countdown"></div>
 </div>
 
-<!-- Our Story -->
-<div class="section">
-<h2>📖 Our Beautiful Story</h2>
-<p>
-We first talked on <b>24th July</b>… and on <b>26th November</b> we committed ❤️  
-From strangers to soulmates, I’m so lucky to have you, Ritu.
-</p>
+<!-- Daily Surprises -->
+<div id="daily"></div>
+
+<!-- Final Surprise -->
+<div id="finalSurprise" class="card hidden">
+  <h2>🎂 Happy Birthday Ritu ❤️</h2>
+  <div class="final">
+    Ritu…  
+    <br><br>
+    From the day we first talked on 24th July, my life slowly started changing in ways I never imagined.  
+    On 26th November, when we committed, I knew this wasn’t just love — it was a future I wanted with you.
+    <br><br>
+    You are my safe place, my happiness, my strength.  
+    I don’t just love you for today… I love you for every tomorrow waiting for us.
+    <br><br>
+    I promise to stand by you in every phase of life —  
+    in happiness, in struggles, in silence, and in dreams we haven’t even dreamt yet.
+    <br><br>
+    Happy Birthday my love.  
+    This is just the beginning of *our forever*. 💍❤️  
+    <br><br>
+    — Yours, Ritik
+  </div>
 </div>
 
-<!-- Special Memories -->
-<div class="section">
-<h2>💕 Our Special Memories</h2>
-<p>🤝 The first time we held hands randomly… my heart still remembers.</p>
-<p>🎁 Your Friendship Day gift after only a few days — you are so special.</p>
-<p>😷 Even when you were sick, you came just to meet me… and we shared our first kiss 💋</p>
-</div>
-
-<!-- Photo Gallery -->
-<div class="section gallery">
-<h2>🖼️ Our Memories</h2>
-<img src="photo1.jpg">
-<img src="photo2.jpg">
-<img src="photo3.jpg">
-<img src="photo4.jpg">
-</div>
-
-<!-- Hidden Surprise -->
-<div class="section">
-<h2>💌 A Final Surprise</h2>
-<button onclick="showMessage()">Click here for a surprise</button>
-<div id="hiddenMessage">
-Ritu ❤️  
-You are the most beautiful part of my life.  
-I promise to love you, respect you and stay with you forever.  
-Happy Birthday My Queen 👑💍  
-– Your Ritik
-</div>
 </div>
 
 <script>
-// Countdown Timer
-var countDownDate = new Date("Feb 28, 2026 00:00:00").getTime();
+// IST Time
+function getIST() {
+  return new Date(new Date().toLocaleString("en-US", {timeZone: "Asia/Kolkata"}));
+}
 
-var x = setInterval(function() {
-  var now = new Date().getTime();
-  var distance = countDownDate - now;
+const birthday = new Date("2026-02-28T00:00:00+05:30");
 
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+// Countdown
+setInterval(() => {
+  const now = getIST();
+  const diff = birthday - now;
+
+  if (diff <= 0) {
+    document.getElementById("countdown").innerHTML = "🎉 It’s Your Birthday ❤️";
+    document.getElementById("finalSurprise").classList.remove("hidden");
+    document.getElementById("music").play();
+    return;
+  }
+
+  const d = Math.floor(diff / (1000*60*60*24));
+  const h = Math.floor((diff / (1000*60*60)) % 24);
+  const m = Math.floor((diff / (1000*60)) % 60);
+  const s = Math.floor((diff / 1000) % 60);
 
   document.getElementById("countdown").innerHTML =
-  days + " Days " + hours + " Hours " + minutes + " Minutes " + seconds + " Seconds ";
-
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("countdown").innerHTML = "🎉 HAPPY BIRTHDAY RITU ❤️ 🎉";
-  }
+    `${d} Days ${h} Hours ${m} Minutes ${s} Seconds`;
 }, 1000);
 
-// Hidden Message Button
-function showMessage() {
-  document.getElementById("hiddenMessage").style.display = "block";
-}
+// Daily unlocks
+const dailyContent = [
+  { date: "2026-02-24", photo: "photo1.jpg", text: "A small reminder that someone loves you more than you know ❤️" },
+  { date: "2026-02-25", photo: "photo2.jpg", text: "Every smile of yours makes my world brighter ✨" },
+  { date: "2026-02-26", photo: "photo3.jpg", text: "I fall for you a little more every single day 💕" },
+  { date: "2026-02-27", photo: "photo4.jpg", text: "Tomorrow… something very special is waiting for you 🥹❤️" }
+];
+
+const dailyDiv = document.getElementById("daily");
+const today = getIST().toISOString().split("T")[0];
+
+dailyContent.forEach(item => {
+  if (today >= item.date) {
+    const card = document.createElement("div");
+    card.className = "card photo";
+    card.innerHTML = `<p>${item.text}</p><img src="${item.photo}">`;
+    dailyDiv.appendChild(card);
+  }
+});
 </script>
 
 </body>
