@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Ritu ❤️</title>
+<style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(#ffdde1, #ee9ca7);
+    text-align: center;
+    color: #333;
+    padding: 20px;
+}
+h1 { color: #c2185b; }
+.section { margin: 40px 0; }
+.gallery img {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+#hiddenMessage {
+    display: none;
+    margin-top: 20px;
+    font-size: 20px;
+    color: #b0003a;
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+}
+button {
+    padding: 10px 20px;
+    background: #c2185b;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover { background: #a3154a; }
+</style>
+</head>
+
+<body>
+
+<!-- Background Music -->
+<audio autoplay loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<h1>Happy Birthday My Love, Ritu 🎂❤️</h1>
+<p>This small website is made with all my love – Ritik</p>
+
+<!-- Countdown Section -->
+<div class="section">
+<h2>⏳ Countdown to Your Birthday</h2>
+<p id="countdown"></p>
+</div>
+
+<!-- Our Story -->
+<div class="section">
+<h2>📖 Our Beautiful Story</h2>
+<p>
+We first talked on <b>24th July</b>… and on <b>26th November</b> we committed ❤️  
+From strangers to soulmates, I’m so lucky to have you, Ritu.
+</p>
+</div>
+
+<!-- Special Memories -->
+<div class="section">
+<h2>💕 Our Special Memories</h2>
+<p>🤝 The first time we held hands randomly… my heart still remembers.</p>
+<p>🎁 Your Friendship Day gift after only a few days — you are so special.</p>
+<p>😷 Even when you were sick, you came just to meet me… and we shared our first kiss 💋</p>
+</div>
+
+<!-- Photo Gallery -->
+<div class="section gallery">
+<h2>🖼️ Our Memories</h2>
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+<img src="photo4.jpg">
+</div>
+
+<!-- Hidden Surprise -->
+<div class="section">
+<h2>💌 A Final Surprise</h2>
+<button onclick="showMessage()">Click here for a surprise</button>
+<div id="hiddenMessage">
+Ritu ❤️  
+You are the most beautiful part of my life.  
+I promise to love you, respect you and stay with you forever.  
+Happy Birthday My Queen 👑💍  
+– Your Ritik
+</div>
+</div>
+
+<script>
+// Countdown Timer
+var countDownDate = new Date("Feb 28, 2026 00:00:00").getTime();
+
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("countdown").innerHTML =
+  days + " Days " + hours + " Hours " + minutes + " Minutes " + seconds + " Seconds ";
+
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "🎉 HAPPY BIRTHDAY RITU ❤️ 🎉";
+  }
+}, 1000);
+
+// Hidden Message Button
+function showMessage() {
+  document.getElementById("hiddenMessage").style.display = "block";
+}
+</script>
+
+</body>
+</html>
